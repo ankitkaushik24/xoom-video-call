@@ -14,7 +14,6 @@ import {
   ToggleAudioPublishingButton,
   ToggleVideoPublishingButton,
   useCall,
-  useCallStateHooks,
 } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/navigation";
 import React, { FC, useEffect, useState } from "react";
@@ -78,7 +77,7 @@ const CancelCallControl: FC<{ isCreateByMe?: boolean }> = ({
       </DropdownMenu>
     );
   }
-  return <CancelCallButton onLeave={leaveCall} />;
+  return <CancelCallButton onClick={leaveCall} />;
 };
 
 const CallLayout: FC<{ layout?: LayoutTypes }> = ({ layout }) => {
@@ -150,7 +149,7 @@ const MeetingRoom = () => {
         </article>
       )}
       <CallLayout layout={layout} />
-      <div className="flex-center gap-4">
+      <div className="flex-center gap-4 str-video__call-controls">
         {/* <CallControls onLeave={() => router.push(`/`)} /> */}
         <RecordCallButton />
 
