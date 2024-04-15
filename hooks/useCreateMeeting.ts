@@ -12,6 +12,7 @@ const useCreateMeeting = () => {
   const [call, setCall] = useState<Call>();
 
   const createMeeting = async ({
+    id = crypto.randomUUID(),
     dateTime = new Date(),
     description = "",
     postCreate = (call: Call) => {},
@@ -25,7 +26,7 @@ const useCreateMeeting = () => {
         toast({ title: "Please select a date and time" });
         return;
       }
-      const id = crypto.randomUUID();
+
       const call = client.call("default", id);
 
       if (!call) throw new Error("Failed to create meeting");

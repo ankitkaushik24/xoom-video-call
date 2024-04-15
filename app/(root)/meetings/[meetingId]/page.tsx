@@ -15,10 +15,7 @@ type MeetingProps = {
 };
 
 const Meeting: FC<MeetingProps> = (props) => {
-  // const { useCallCallingState } = useCallStateHooks();
-  // let callStatus = useCallCallingState();
   const [isSetupCompleted, setIsSetupCompleted] = useState(false);
-  // console.log("callStatus", callStatus);
 
   return (
     <StreamTheme className="dark">

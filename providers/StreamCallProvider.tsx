@@ -11,7 +11,6 @@ import React, { FC, ReactNode } from "react";
 
 const StreamCallProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const { meetingId } = useParams();
-  console.log({ meetingId });
   const { call, isLoading } = useCallById(meetingId as string);
 
   if (isLoading) return "Loading...";

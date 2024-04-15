@@ -38,24 +38,6 @@ const StreamClientProvider: FC<PropType> = ({ user, token, children }) => {
 
   if (!videoClient) return null;
 
-  // const call = client.call("default", callId);
-
-  // call.getOrCreate({
-  //   data: {
-  //     settings_override: {
-  //       video: {
-  //         camera_default_on: false
-  //       },
-  //       audio: {
-  //         default_device: 'earpiece',
-  //         mic_default_on: false
-  //       }
-  //     }
-  //   }
-  // });
-  // call.camera.enable();
-  // call.microphone.enable();
-
   return <StreamVideo client={videoClient}>{children}</StreamVideo>;
 };
 

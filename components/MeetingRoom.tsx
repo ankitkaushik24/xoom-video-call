@@ -46,15 +46,11 @@ const CancelCallControl: FC<{ isCreateByMe?: boolean }> = ({
 
   const leaveCall = async () => {
     await call?.leave();
-    // call?.camera.dispose();
-    // call?.microphone.disable();
     router.push("/");
   };
 
   const endCall = async () => {
     await call?.endCall();
-    // call?.camera.dispose();
-    // call?.microphone.disable();
     router.push("/");
   };
 

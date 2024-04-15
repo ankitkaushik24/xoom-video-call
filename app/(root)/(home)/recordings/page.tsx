@@ -39,7 +39,6 @@ const Recordings = () => {
 
     Promise.all(query)
       .then((meetingRecordings) => {
-        console.log({ meetingRecordings });
         const recordings = meetingRecordings.flatMap(
           (meeting) => meeting.recordings
         );
